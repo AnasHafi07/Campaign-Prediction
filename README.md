@@ -33,6 +33,9 @@
 
 # Duplicated data
  * There is no duplicated data in the dataset
+ 
+# Missing values
+![alt text](https://github.com/AnasHafi07/Campaign-Prediction/blob/main/Statics/Missing_Values.png)
 
 # Feature selection
  * Since we are using deep learning model, feature selection step is skipped as it will not improve much the model.
@@ -40,6 +43,7 @@
 # Deep Learning Model
 
 # Model Architecture
+![alt text](https://github.com/AnasHafi07/Campaign-Prediction/blob/main/Statics/model-architecture.png)
 
 # Model Performance
 
