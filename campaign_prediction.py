@@ -14,6 +14,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 #from modules_for_campaign_prediction import EDA
+from tensorflow.keras.utils import plot_model
 
 #%% Statics
 
@@ -35,7 +36,8 @@ SCALER_PATH = os.path.join(os.getcwd(), 'Objects', 'scaler.pkl')
 OHE_PATH = os.path.join(os.getcwd(), 'Objects', 'ohe.pkl')
 KNN_PATH = os.path.join(os.getcwd(), 'Objects', 'knn.pkl')
 MODEL_PATH = os.path.join(os.getcwd(), 'Objects', 'dl_model.h5')
-
+PLOT_MODEL_PATH = os.path.join(os.getcwd(), 'Statics',
+                               'model-architecture.png')
 
 COLUMN_NAMES = ['id', 'customer_age', 'job_type', 'marital', 'education', 'default',
        'balance', 'housing_loan', 'personal_loan', 'communication_type',
@@ -67,7 +69,8 @@ cater_columns = df.columns[df.dtypes =='object']
 
 con_columns = df.columns[(df.dtypes == 'int64') | (df.dtypes == 'float64')]
 
-print(df.isna().sum()) 
+
+print('\nMissing values:\n', df.isna().sum()) 
 
 df.duplicated().sum()
 
@@ -185,6 +188,7 @@ hist = model.fit(X_train,y_train,batch_size=64,epochs=5,
                       validation_data=(X_test,y_test),
                       callbacks= [early_stopping_callback, tb_callback])
 
+plot_model(model, to_file=PLOT_MODEL_PATH)
 model.save(MODEL_PATH)
 
 #%%
