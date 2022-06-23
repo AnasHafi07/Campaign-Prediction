@@ -5,7 +5,7 @@
 
 # Python Scripts
   * campaign_prediction.py
-  * 
+
   * modules_for_campaign_prediction.py
 
 # Directories
@@ -27,5 +27,28 @@
 <h1 align="center">
  
 ![alt text](https://github.com/AnasHafi07/Campaign-Prediction/blob/main/Statics/Tensorboard.png)
+
+# EDA
+ * Load data from `train.csv`
+
+# Duplicated data
+ * There is no duplicated data in the dataset
+
+# Feature selection
+ * Since we are using deep learning model, feature selection step is skipped as it will not improve much the model.
+
+# Deep Learning Model
+
+# Model Architecture
+
+# Model Performance
+
+<h1 align="center">
+ 
+ ![alt text](https://github.com/AnasHafi07/Campaign-Prediction/blob/main/Statics/Score.png)
+ 
+ In short, the model performs well as it achieved 0.93 accuracy
+ 
+ The model is trained using deep learning model
 
 
